@@ -8,7 +8,7 @@ class Order(models.Model):
     name = fields.Char(string='Kode Order', required=True)
 
     orderdetail_ids = fields.One2many(
-        comodel_name='wedding.order_detail', inverse_name='Order_id', string='Order Detail')
+        comodel_name='wedding.order_detail', inverse_name='order_id', string='Order Detail')
 
 
 class OrderDetail(models.Model):

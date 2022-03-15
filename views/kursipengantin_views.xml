@@ -11,7 +11,6 @@
                 <field name="name"/>
                 <field name="deskripsi"/>
                 <field name="harga"/>
-                '/;dsa
             </tree>
         </field>
     </record>
@@ -32,20 +31,20 @@
                     <group name="deskripsi" string="Deskripsi">
                         <field name="deskripsi"/>
                     </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
 
-                </form>
-            </field>
-        </record>
+    <!-- wedding.kursipengantin action window -->
+    <record id="wedding_kursipengantin_action" model="ir.actions.act_window">
+        <field name="name">Kursi Pengantin</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">wedding.kursipengantin</field>
+        <field name="view_mode">tree,form</field>
+    </record>
 
-        <!-- wedding.kursipengantin action window -->
-        <record id="wedding_kursipengantin_action" model="ir.actions.act_window">
-            <field name="name">Kursi Pengantin</field>
-            <field name="type">ir.actions.act_window</field>
-            <field name="res_model">wedding.kursipengantin</field>
-            <field name="view_mode">tree,form</field>
-        </record>
-
-        <menuitem id="wedding_kursipengantin_menu_act" name="Kursi Pengantin" parent="wedding_akomodasi_menu_categ" action="wedding_kursipengantin_action" sequence="30"/>
+    <menuitem id="wedding_kursipengantin_menu_act" name="Kursi Pengantin" parent="wedding_akomodasi_menu_categ" action="wedding_kursipengantin_action" sequence="30"/>
 
 
-    </odoo>
+</odoo>
