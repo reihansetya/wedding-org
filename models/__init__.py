@@ -7,4 +7,3 @@ from . import panggung
 from . import pelaminan
 from . import kursipengantin
 from . import kursitamu
-from . import dekor
