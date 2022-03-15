@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <menuitem id="wedding_menu_root" name="wedding Orgz" sequence="10"/>
+
+
+    <menuitem id="wedding_akomodasi_menu_categ" name="akomodasi" parent="wedding_menu_root" sequence="10"/>
+
+    <!-- This Menu Item must have a parent and an action -->
+    <!-- <menuitem id="wedding_order_menu_act" name="order" parent="wedding_menu_root" asequence="20"/> -->
+
+</odoo>
