@@ -13,6 +13,10 @@ class Order(models.Model):
         inverse_name='order_id',
         string='Order Detail')
 
+    tanggal_pesan = fields.Datetime(
+        'Tanggal Pemesanan',
+        default=fields.Datetime.now())
+
     total = fields.Integer(
         compute="_compute_total",
         string='Total Harga',
@@ -44,7 +48,8 @@ class OrderDetail(models.Model):
             ('kursi tamu', 'Kursi Tamu'), ])
     harga = fields.Integer(
         compute='_compute_harga',
-        string='harga')
+        string='harga',
+        store=True)
     qty = fields.Integer(string='QTY')
     harga_satuan = fields.Integer(
         compute='_compute_harga_satuan', string='Harga Satuan')
@@ -58,3 +63,11 @@ class OrderDetail(models.Model):
     def _compute_harga(self):
         for record in self:
             record.harga = record.harga_satuan * record.qty
+
+    @api.model
+    def create(self, vals):
+        record = super(OrderDetail, self).create(vals)
+        if record.qty:
+            self.env['wedding.panggung'].search(
+                [('id', '=', record.panggung_id.id)]).write({'stok': record.panggung_id.stok-record.qty})
+            return record
