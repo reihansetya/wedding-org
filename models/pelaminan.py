@@ -8,4 +8,3 @@ class Pelaminan(models.Model):
     name = fields.Char(string='Name')
     deskripsi = fields.Char(string='Deskripsi Pelaminan')
     harga = fields.Integer(string='Harga Sewa')
-

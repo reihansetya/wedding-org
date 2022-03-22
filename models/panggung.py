@@ -13,10 +13,6 @@ class Panggung(models.Model):
         string='Kursi Pengantin',
         required=True)
 
-    orderdetail_ids = fields.One2many(
-        comodel_name='wedding.order_detail', inverse_name='panggung_id',
-        string='Order Detail')
-
     bunga = fields.Selection(string='Tipe Bunga', selection=[(
         'bunga mati', 'Bunga Mati'), ('bunga hidup', 'Bunga Hidup'), ])
     accesories = fields.Char(string='Accesories Pelaminan')
